@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Dinâmica Sísmica Global (2001–2023)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
+  <style>
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .reveal h1, .reveal h2, .reveal h3 { color: #5dd0ff; }
+    .reveal section img { border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>🌍 Dinâmica Sísmica Global (2001–2023)</h1>
+        <h3>Uma Abordagem de Visualização de Dados</h3>
+        <p><em>Baseado em trabalho da disciplina MS906 – Visualização de Dados</em></p>
+      </section>
+
+      <!-- Introdução -->
+      <section data-external="slides/intro.html"></section>
+
+      <!-- Descrição dos Dados -->
+      <section data-external="slides/data.html"></section>
+
+      <!-- Análise Exploratória -->
+      <section data-external="slides/exploration.html"></section>
+
+      <!-- Gráficos -->
+      <section>
+        <h2>Continentes mais afetados</h2>
+        <iframe src="charts/grafico1A.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Distribuição das Magnitudes</h2>
+        <iframe src="charts/grafico1B.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Profundidade do Hipocentro</h2>
+        <iframe src="charts/grafico2.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Relação entre Magnitude e Profundidade</h2>
+        <iframe src="charts/grafico3A.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Maremotos e Tsunamis</h2>
+        <iframe src="charts/grafico3B.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Países mais afetados</h2>
+        <iframe src="charts/grafico4.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Top 10 países por número de eventos</h2>
+        <iframe src="charts/grafico5.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Eventos por Placa Tectônica</h2>
+        <iframe src="charts/grafico6.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Distribuição Mensal dos Abalos Sísmicos</h2>
+        <iframe src="charts/grafico7.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Distribuição Global dos Tsunamis</h2>
+        <iframe src="charts/grafico8.html"></iframe>
+      </section>
+
+      <section>
+        <h2>Distribuição Global dos Sismos</h2>
+        <iframe src="charts/grafico9.html"></iframe>
+      </section>
+
+      <!-- Conclusão -->
+      <section data-external="slides/conclusion.html"></section>
+
+      <!-- Softwares -->
+      <section data-external="slides/software.html"></section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/external/external.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealExternal ],
+      transition: 'convex'
+    });
+  </script>
+</body>
+</html>
