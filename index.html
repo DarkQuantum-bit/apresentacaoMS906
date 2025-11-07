@@ -22,6 +22,7 @@
   <div class="reveal">
     <div class="slides">
 
+      <!-- Capa -->
       <section>
         <h1>🌍 Dinâmica Sísmica Global (2001–2023)</h1>
         <h3>Uma Abordagem de Visualização de Dados</h3>
@@ -29,93 +30,103 @@
       </section>
 
       <!-- Introdução -->
-      <section data-external="slides/intro.html"></section>
+      <section>
+        <h2>Introdução</h2>
+        <p>Os terremotos são fenômenos naturais causados pela liberação súbita de energia acumulada na litosfera, gerando ondas sísmicas que se propagam pelo planeta.</p>
+        <p>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global, com foco em eventos de magnitude ≥ 5.0.</p>
+      </section>
 
       <!-- Descrição dos Dados -->
-      <section data-external="slides/data.html"></section>
+      <section>
+        <h2>Descrição dos Dados</h2>
+        <p>O conjunto de dados utilizado é proveniente do <em>Comprehensive Earthquake Catalog (ComCat)</em> do USGS, contendo mais de 3 milhões de registros entre 2001 e 2023.</p>
+        <ul>
+          <li>Variáveis: data, hora, latitude, longitude, magnitude, profundidade, tsunami.</li>
+          <li>Fontes: USGS e repositório do Kaggle “Ultimate Earthquake Dataset (1990–2023)”.</li>
+          <li>Critério: eventos com magnitude ≥ 2.0, recorte temporal 2001–2023.</li>
+        </ul>
+      </section>
 
       <!-- Análise Exploratória -->
-      <section data-external="slides/exploration.html"></section>
+      <section>
+        <h2>Análise Exploratória dos Dados (Resumo)</h2>
+        <p>Esta seção sintetiza as principais questões investigadas no trabalho (2001–2023) e indica os gráficos interativos que ilustram cada resultado.</p>
+
+        <h3>Questões investigadas</h3>
+        <ul>
+          <li><strong>Quais continentes são mais afetados?</strong> — ver <em>Continentes mais afetados</em> (charts/grafico1A.html).</li>
+          <li><strong>Como se distribuem as magnitudes?</strong> — ver <em>Distribuição das Magnitudes</em> (charts/grafico1B.html).</li>
+          <li><strong>Distribuição da profundidade do hipocentro</strong> — ver <em>Profundidade do Hipocentro</em> (charts/grafico2.html).</li>
+          <li><strong>Relação magnitude × profundidade</strong> — ver <em>Relação entre Magnitude e Profundidade</em> (charts/grafico3A.html).</li>
+          <li><strong>Maremotos e ocorrência de tsunamis</strong> — ver <em>Maremotos e Tsunamis</em> (charts/grafico3B.html).</li>
+          <li><strong>Países mais afetados</strong> — ver <em>Países mais afetados</em> (charts/grafico4.html) e <em>Top 10</em> (charts/grafico5.html).</li>
+          <li><strong>Eventos por placa tectônica</strong> — ver <em>Eventos por Placa Tectônica</em> (charts/grafico6.html).</li>
+          <li><strong>Distribuição mensal e sazonal</strong> — ver <em>Mapa de calor temporal</em> (charts/grafico7.html).</li>
+          <li><strong>Onde ocorrem tsunamis com maior frequência?</strong> — ver <em>Distribuição Global dos Tsunamis</em> (charts/grafico8.html).</li>
+          <li><strong>Distribuição espacial dos sismos (M ≥ 5)</strong> — ver <em>Distribuição Global dos Sismos</em> (charts/grafico9.html).</li>
+        </ul>
+
+        <h3>Principais insights (síntese)</h3>
+        <ol>
+          <li><strong>Concentração ao longo dos limites de placas:</strong> o Círculo de Fogo do Pacífico é dominante (ver mapas interativos grafico8 / grafico9).</li>
+          <li><strong>Magnitude:</strong> presença de picos ligados ao limiar de completude do catálogo; eventos grandes (M ≥ 7) são raros mas críticos (grafico1B).</li>
+          <li><strong>Profundidade:</strong> ~87,5% dos eventos são rasos (≤100 km); há um segundo pico em 500–650 km ligado à subdução (grafico2).</li>
+          <li><strong>Tsunamis:</strong> probabilidade significativa de tsunamis para M ≥ 7,0 — calibrar sistemas de alerta (grafico3B / grafico8).</li>
+          <li><strong>Países e placas:</strong> Indonésia, Papua-Nova Guiné, Chile e China entre os mais ativos; placas Sunda, Kermadec e Pacífica apresentam alta contagem (grafico4, grafico5, grafico6).</li>
+          <li><strong>Sazonalidade e eventos extremos:</strong> picos interanuais (ex.: março/2011) são claramente visíveis no heatmap temporal (grafico7).</li>
+        </ol>
+
+        <h3>Como usar estes slides</h3>
+        <p>
+          - Navegue até cada slide de gráfico para interagir (zoom, filtros e tooltip).<br>
+          - Use as anotações acima na apresentação oral: elas seguem a mesma ordem dos gráficos.<br>
+          - Se precisar destacar um ponto do PDF original, abra o PDF ao lado e cite a seção correspondente (Introdução / AED / Conclusão).
+        </p>
+      </section>
 
       <!-- Gráficos -->
-      <section>
-        <h2>Continentes mais afetados</h2>
-        <iframe src="charts/grafico1A.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Distribuição das Magnitudes</h2>
-        <iframe src="charts/grafico1B.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Profundidade do Hipocentro</h2>
-        <iframe src="charts/grafico2.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Relação entre Magnitude e Profundidade</h2>
-        <iframe src="charts/grafico3A.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Maremotos e Tsunamis</h2>
-        <iframe src="charts/grafico3B.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Países mais afetados</h2>
-        <iframe src="charts/grafico4.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Top 10 países por número de eventos</h2>
-        <iframe src="charts/grafico5.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Eventos por Placa Tectônica</h2>
-        <iframe src="charts/grafico6.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Distribuição Mensal dos Abalos Sísmicos</h2>
-        <iframe src="charts/grafico7.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Distribuição Global dos Tsunamis</h2>
-        <iframe src="charts/grafico8.html"></iframe>
-      </section>
-
-      <section>
-        <h2>Distribuição Global dos Sismos</h2>
-        <iframe src="charts/grafico9.html"></iframe>
-      </section>
+      <section><h2>Continentes mais afetados</h2><iframe src="charts/grafico1A.html"></iframe></section>
+      <section><h2>Distribuição das Magnitudes</h2><iframe src="charts/grafico1B.html"></iframe></section>
+      <section><h2>Profundidade do Hipocentro</h2><iframe src="charts/grafico2.html"></iframe></section>
+      <section><h2>Relação entre Magnitude e Profundidade</h2><iframe src="charts/grafico3A.html"></iframe></section>
+      <section><h2>Maremotos e Tsunamis</h2><iframe src="charts/grafico3B.html"></iframe></section>
+      <section><h2>Países mais afetados</h2><iframe src="charts/grafico4.html"></iframe></section>
+      <section><h2>Top 10 países por número de eventos</h2><iframe src="charts/grafico5.html"></iframe></section>
+      <section><h2>Eventos por Placa Tectônica</h2><iframe src="charts/grafico6.html"></iframe></section>
+      <section><h2>Distribuição Mensal dos Abalos Sísmicos</h2><iframe src="charts/grafico7.html"></iframe></section>
+      <section><h2>Distribuição Global dos Tsunamis</h2><iframe src="charts/grafico8.html"></iframe></section>
+      <section><h2>Distribuição Global dos Sismos</h2><iframe src="charts/grafico9.html"></iframe></section>
 
       <!-- Conclusão -->
-      <section data-external="slides/conclusion.html"></section>
+      <section>
+        <h2>Conclusão</h2>
+        <p>A análise confirma que a sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
+        <p>87,5% dos eventos têm profundidade inferior a 100 km e a maioria dos tsunamis ocorre em sismos com magnitude superior a 7.0.</p>
+        <p>O estudo reforça a importância do monitoramento contínuo e do uso de dados abertos para mitigação de riscos geológicos.</p>
+      </section>
 
       <!-- Softwares -->
-      <section data-external="slides/software.html"></section>
+      <section>
+        <h2>Softwares Utilizados</h2>
+        <ul>
+          <li>Python (Google Colab)</li>
+          <li>pandas, numpy, geopandas, shapely</li>
+          <li>matplotlib e pyEcharts (para visualizações interativas)</li>
+        </ul>
+        <p>A integração dessas bibliotecas permitiu a análise estatística e geoespacial da atividade sísmica global.</p>
+      </section>
 
     </div>
   </div>
 
   <!-- Scripts Reveal.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-  
-  <!-- Plugin external.js (carregado do repositório oficial) -->
-  <script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins@master/external/external.js"></script>
-  
   <script>
     Reveal.initialize({
       hash: true,
       slideNumber: true,
-      transition: 'convex',
-      plugins: [ RevealExternal ]
+      transition: 'convex'
     });
   </script>
-
-
-
+</body>
+</html>
