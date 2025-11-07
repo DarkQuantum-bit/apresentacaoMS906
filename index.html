@@ -9,40 +9,42 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
 
-  <!-- Estilo customizado -->
   <style>
-    body {
-      background: radial-gradient(circle at center, #0d0d0d 0%, #050505 100%);
-      color: #dce3f0;
-      font-family: 'Inter', sans-serif;
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #0b0f14 0%, #000000 100%);
+      color: #e6eef7;
+      font-family: "Inter", sans-serif;
+    }
+
+    .reveal {
+      font-size: 1.1em;
+      line-height: 1.4em;
     }
 
     .reveal h1, .reveal h2, .reveal h3 {
       color: #5dd0ff;
-      text-shadow: 0 0 10px rgba(93,208,255,0.4);
+      text-shadow: 0 0 12px rgba(93,208,255,0.4);
     }
-
-    .reveal p, .reveal li {
-      font-size: 1.05em;
-      line-height: 1.4em;
-      color: #dce3f0;
-    }
-
-    .reveal section img { border-radius: 10px; }
 
     iframe {
-      width: 90%;
-      height: 420px;
+      width: 95%;
+      height: 80vh;
+      max-height: 750px;
       border: none;
-      border-radius: 14px;
-      margin-top: 10px;
+      border-radius: 18px;
+      margin: 0 auto;
+      display: block;
+      background: #0d0d0d;
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      background: #101010;
       transition: transform 0.4s ease;
     }
 
     iframe:hover {
-      transform: scale(1.02);
+      transform: scale(1.01);
     }
 
     /* Capa */
@@ -51,11 +53,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100%;
       text-align: center;
-      background: linear-gradient(160deg, #00111c 0%, #002c3d 100%);
-      border-radius: 20px;
+      height: 100%;
       padding: 40px;
+      background: linear-gradient(160deg, #00111c 0%, #002c3d 100%);
+      border-radius: 16px;
     }
 
     .authors {
@@ -66,25 +68,36 @@
 
     .authors span {
       display: block;
-      color: #9fe3ff;
+      color: #aeeaff;
     }
 
     .institution {
       margin-top: 1.5em;
-      font-size: 0.9em;
+      font-size: 0.95em;
       color: #7dd4ff;
     }
 
-    /* Efeitos animados */
+    /* Fragmentos animados */
     [data-fragment] {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(25px);
       transition: all 0.6s ease;
     }
 
     .visible [data-fragment] {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Melhorar margem e centralização de conteúdo */
+    .reveal section {
+      padding: 20px;
+    }
+
+    ul, ol {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 900px;
     }
   </style>
 </head>
@@ -128,7 +141,6 @@
       <!-- Análise Exploratória -->
       <section data-transition="slide">
         <h2>Análise Exploratória</h2>
-        <p data-fragment>Questões centrais analisadas:</p>
         <ul>
           <li data-fragment>Distribuição espacial (continentes e placas tectônicas)</li>
           <li data-fragment>Magnitude e profundidade dos eventos</li>
@@ -179,12 +191,17 @@
       hash: true,
       slideNumber: true,
       transition: 'convex',
-      transitionSpeed: 'fast',
+      transitionSpeed: 'default',
       backgroundTransition: 'fade',
-      fragments: true
+      fragments: true,
+      width: "100%",
+      height: "100%",
+      margin: 0.05,
+      minScale: 0.2,
+      maxScale: 1.2
     });
 
-    // animação simples de entrada
+    // animação de entrada
     Reveal.on('slidechanged', event => {
       const current = event.currentSlide;
       current.classList.add('visible');
