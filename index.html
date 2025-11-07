@@ -30,13 +30,22 @@
       text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
-    /* 🔹 Slides com conteúdo externo (gráficos em tela cheia) */
-    section[data-external] {
+    /* 🔹 iframes em tela cheia */
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      margin: 0;
+      display: block;
+      background: #000;
+    }
+
+    /* 🔹 Remover padding e centralização dos slides com gráfico */
+    .slide-full {
       padding: 0 !important;
       margin: 0 !important;
+      display: block !important;
       background: #000;
-      height: 100%;
-      width: 100%;
     }
 
     /* Capa */
@@ -171,18 +180,18 @@
         </ul>
       </section>
 
-      <!-- 🔹 Slides de gráficos (carregados via plugin external.js) -->
-      <section data-external="charts/grafico1A.html" data-transition="zoom"></section>
-      <section data-external="charts/grafico1B.html" data-transition="fade"></section>
-      <section data-external="charts/grafico2.html" data-transition="convex"></section>
-      <section data-external="charts/grafico3A.html" data-transition="fade"></section>
-      <section data-external="charts/grafico3B.html" data-transition="concave"></section>
-      <section data-external="charts/grafico4.html" data-transition="zoom"></section>
-      <section data-external="charts/grafico5.html" data-transition="convex"></section>
-      <section data-external="charts/grafico6.html" data-transition="fade"></section>
-      <section data-external="charts/grafico7.html" data-transition="convex"></section>
-      <section data-external="charts/grafico8.html" data-transition="fade"></section>
-      <section data-external="charts/grafico9.html" data-transition="zoom"></section>
+      <!-- 🔹 Gráficos em fullscreen -->
+      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico1A.html"></iframe></section>
+      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico1B.html"></iframe></section>
+      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico2.html"></iframe></section>
+      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico3A.html"></iframe></section>
+      <section class="slide-full" data-transition="concave"><iframe src="charts/grafico3B.html"></iframe></section>
+      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico4.html"></iframe></section>
+      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico5.html"></iframe></section>
+      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico6.html"></iframe></section>
+      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico7.html"></iframe></section>
+      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico8.html"></iframe></section>
+      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico9.html"></iframe></section>
 
       <!-- Conclusão -->
       <section data-transition="slide">
@@ -197,8 +206,8 @@
         <h2>Softwares Utilizados</h2>
         <ul>
           <li data-fragment>Python (Google Colab)</li>
-          <li data-fragment>pandas, numpy, geopandas</li>
-          <li data-fragment>matplotlib e pyECharts</li>
+          <li data-fragment>pandas, numpy, geopandas, shapely</li>
+          <li data-fragment>matplotlib e pyECharts (para visualizações interativas)</li>
         </ul>
         <p data-fragment>Essas ferramentas possibilitaram análises estatísticas e geoespaciais consistentes da atividade sísmica global.</p>
       </section>
@@ -207,7 +216,7 @@
       <section class="thanks" data-transition="fade">
         <h1>Obrigado! 🙏</h1>
         <p>MS906 – Visualização de Dados</p>
-        <p><small>IMECC · UNICAMP · 2025</small></p>
+        <p><small>IMECC · UNICAMP · 2023</small></p>
       </section>
 
     </div>
@@ -215,10 +224,6 @@
 
   <!-- Scripts Reveal.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-
-  <!-- Plugin external.js -->
-  <script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins@master/external/external.js"></script>
-
   <script>
     Reveal.initialize({
       hash: true,
@@ -230,11 +235,9 @@
       width: "100%",
       height: "100%",
       minScale: 0.2,
-      maxScale: 1.1,
-      plugins: [ RevealExternal ]
+      maxScale: 1.1
     });
 
-    // Animação de entrada dos fragmentos
     Reveal.on('slidechanged', e => e.currentSlide.classList.add('visible'));
   </script>
 </body>
