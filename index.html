@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Dinâmica Sísmica Global (2001–2023)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
@@ -15,36 +15,35 @@
       height: 100%;
       margin: 0;
       overflow: hidden;
-      background: radial-gradient(circle at center, #0b0f14 0%, #000000 100%);
+      background: radial-gradient(circle at center, #091018 0%, #000000 100%);
       color: #e6eef7;
       font-family: "Inter", sans-serif;
     }
 
     .reveal {
       font-size: 1.1em;
-      line-height: 1.4em;
+      line-height: 1.5em;
     }
 
     .reveal h1, .reveal h2, .reveal h3 {
       color: #5dd0ff;
-      text-shadow: 0 0 12px rgba(93,208,255,0.4);
+      text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
     iframe {
-      width: 95%;
-      height: 80vh;
-      max-height: 750px;
+      width: 100%;
+      height: 88vh;
       border: none;
-      border-radius: 18px;
-      margin: 0 auto;
+      border-radius: 16px;
       display: block;
       background: #0d0d0d;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      transition: transform 0.4s ease;
+      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
     iframe:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(93,208,255,0.5);
     }
 
     /* Capa */
@@ -56,23 +55,24 @@
       text-align: center;
       height: 100%;
       padding: 40px;
-      background: linear-gradient(160deg, #00111c 0%, #002c3d 100%);
-      border-radius: 16px;
+      background: linear-gradient(150deg, #00111c 0%, #002f46 100%);
+      border-radius: 18px;
     }
 
     .authors {
       margin-top: 2em;
       font-size: 1.1em;
       line-height: 1.5em;
+      color: #aeeaff;
     }
 
     .authors span {
       display: block;
-      color: #aeeaff;
+      margin: 0.2em 0;
     }
 
     .institution {
-      margin-top: 1.5em;
+      margin-top: 1.8em;
       font-size: 0.95em;
       color: #7dd4ff;
     }
@@ -81,7 +81,7 @@
     [data-fragment] {
       opacity: 0;
       transform: translateY(25px);
-      transition: all 0.6s ease;
+      transition: all 0.7s ease;
     }
 
     .visible [data-fragment] {
@@ -89,9 +89,14 @@
       transform: translateY(0);
     }
 
-    /* Melhorar margem e centralização de conteúdo */
+    /* Layout */
     .reveal section {
-      padding: 20px;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     ul, ol {
@@ -99,6 +104,30 @@
       margin: 0 auto;
       max-width: 900px;
     }
+
+    /* Slide final */
+    .thanks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #001624 0%, #002a38 100%);
+      color: #aeeaff;
+      height: 100%;
+      border-radius: 18px;
+    }
+
+    .thanks h1 {
+      font-size: 3em;
+      color: #5dd0ff;
+      text-shadow: 0 0 20px rgba(93,208,255,0.7);
+    }
+
+    .thanks p {
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+
   </style>
 </head>
 
@@ -117,24 +146,24 @@
           <span>Guilherme Fernandes – RA: 264188</span>
           <span>Pedro Henrique G. dos Santos – RA: 259747</span>
         </div>
-        <div class="institution">IMECC – UNICAMP | Disciplina: MS906 – Visualização de Dados</div>
+        <div class="institution">IMECC – UNICAMP · MS906 – Visualização de Dados</div>
       </section>
 
       <!-- Introdução -->
       <section data-transition="fade">
         <h2>Introdução</h2>
-        <p data-fragment>Os terremotos são fenômenos naturais causados pela liberação súbita de energia acumulada na litosfera, gerando ondas sísmicas que se propagam pelo planeta.</p>
+        <p data-fragment>Os terremotos resultam da liberação súbita de energia acumulada na litosfera, gerando ondas sísmicas que se propagam pelo planeta.</p>
         <p data-fragment>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global, com foco em eventos de magnitude ≥ 5.0.</p>
       </section>
 
       <!-- Descrição dos Dados -->
       <section data-transition="convex">
         <h2>Descrição dos Dados</h2>
-        <p data-fragment>O conjunto de dados utilizado é proveniente do <em>Comprehensive Earthquake Catalog (ComCat)</em> do USGS, contendo mais de 3 milhões de registros entre 2001 e 2023.</p>
+        <p data-fragment>O conjunto de dados é proveniente do <em>Comprehensive Earthquake Catalog (ComCat)</em> do USGS, contendo mais de 3 milhões de registros (2001–2023).</p>
         <ul>
           <li data-fragment>Variáveis: data, hora, latitude, longitude, magnitude, profundidade, tsunami.</li>
-          <li data-fragment>Fontes: USGS e repositório do Kaggle “Ultimate Earthquake Dataset (1990–2023)”.</li>
-          <li data-fragment>Critério: eventos com magnitude ≥ 2.0, recorte temporal 2001–2023.</li>
+          <li data-fragment>Fontes: USGS e repositório Kaggle “Ultimate Earthquake Dataset (1990–2023)”.</li>
+          <li data-fragment>Critério: magnitude ≥ 2.0 e recorte temporal de 2001 a 2023.</li>
         </ul>
       </section>
 
@@ -144,7 +173,7 @@
         <ul>
           <li data-fragment>Distribuição espacial (continentes e placas tectônicas)</li>
           <li data-fragment>Magnitude e profundidade dos eventos</li>
-          <li data-fragment>Ocorrência de tsunamis</li>
+          <li data-fragment>Ocorrência de tsunamis e eventos extremos</li>
           <li data-fragment>Variações temporais e mensais</li>
         </ul>
       </section>
@@ -165,9 +194,9 @@
       <!-- Conclusão -->
       <section data-transition="slide">
         <h2>Conclusão</h2>
-        <p data-fragment>A sismicidade global se concentra nas fronteiras das placas tectônicas, especialmente no Círculo de Fogo do Pacífico.</p>
+        <p data-fragment>A sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
         <p data-fragment>87,5% dos eventos têm profundidade inferior a 100 km; tsunamis estão associados a magnitudes ≥ 7.0.</p>
-        <p data-fragment>Os dados reforçam a importância de sistemas de monitoramento e da análise de dados abertos para mitigação de riscos geológicos.</p>
+        <p data-fragment>Os resultados reforçam a importância do monitoramento contínuo e do uso de dados abertos para mitigação de riscos geológicos.</p>
       </section>
 
       <!-- Softwares -->
@@ -179,6 +208,13 @@
           <li data-fragment>matplotlib e pyEcharts (para visualizações interativas)</li>
         </ul>
         <p data-fragment>Essas ferramentas possibilitaram análises estatísticas e geoespaciais consistentes da atividade sísmica global.</p>
+      </section>
+
+      <!-- Agradecimento -->
+      <section class="thanks" data-transition="fade">
+        <h1>Obrigado! 🙏</h1>
+        <p>MS906 – Visualização de Dados</p>
+        <p><small>IMECC · UNICAMP · 2023</small></p>
       </section>
 
     </div>
@@ -196,12 +232,11 @@
       fragments: true,
       width: "100%",
       height: "100%",
-      margin: 0.05,
+      margin: 0.04,
       minScale: 0.2,
-      maxScale: 1.2
+      maxScale: 1.1
     });
 
-    // animação de entrada
     Reveal.on('slidechanged', event => {
       const current = event.currentSlide;
       current.classList.add('visible');
