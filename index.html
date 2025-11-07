@@ -30,21 +30,24 @@
       text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
-    /* 🔹 iframes em tela cheia */
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      margin: 0;
-      display: block;
-      background: #000;
-    }
-
-    /* 🔹 Remover padding e centralização dos slides com gráfico */
+    /* 🔹 iframes agora ocupam 100% do slide visível */
     .slide-full {
       padding: 0 !important;
       margin: 0 !important;
-      display: block !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: #000;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-full iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin: 0;
+      display: block;
       background: #000;
     }
 
@@ -216,7 +219,7 @@
       <section class="thanks" data-transition="fade">
         <h1>Obrigado! 🙏</h1>
         <p>MS906 – Visualização de Dados</p>
-        <p><small>IMECC · UNICAMP · 2023</small></p>
+        <p><small>IMECC · UNICAMP · 2025</small></p>
       </section>
 
     </div>
