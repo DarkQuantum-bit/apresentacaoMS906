@@ -30,7 +30,7 @@
       text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
-    /* Capa estilizada com efeitos */
+    /* 🌋 CAPA */
     .cover {
       position: relative;
       display: flex !important;
@@ -45,7 +45,7 @@
       color: #e6eef7;
     }
 
-    /* Fundo com imagem da Terra */
+    /* Fundo da capa */
     .cover::before {
       content: "";
       position: absolute;
@@ -56,7 +56,7 @@
       filter: blur(2px) brightness(0.7);
     }
 
-    /* Animação sísmica */
+    /* Ondas sísmicas animadas */
     .wave {
       position: absolute;
       width: 300px;
@@ -136,7 +136,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Outros slides */
+    /* 📊 Slides de gráfico */
     .slide-full iframe {
       width: 100%;
       height: 100%;
@@ -155,21 +155,93 @@
       background: #000;
     }
 
+    /* 🙏 Agradecimentos */
     .thanks {
+      position: relative;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+      height: 100vh !important;
+      width: 100% !important;
+      background: radial-gradient(circle at center, #00111c 0%, #002f46 100%);
+      overflow: hidden;
+      color: #e6eef7;
+    }
+
+    /* Fundo animado (aurora) */
+    .thanks::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #004f6e, #001a28, #006e8a, #002e3c);
+      background-size: 400% 400%;
+      animation: aurora 12s infinite ease-in-out;
+      opacity: 0.25;
+      z-index: 0;
+      filter: blur(30px);
+    }
+
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Ondas suaves */
+    .thanks .wave {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #5dd0ff;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: pulse 4s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .thanks .wave:nth-child(2) {
+      animation-delay: 1s;
+      border-color: #7de3ff;
+    }
+
+    .thanks .wave:nth-child(3) {
+      animation-delay: 2s;
+      border-color: #46bfff;
+    }
+
+    /* Conteúdo do slide de agradecimento */
+    .thanks-content {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(180deg, #001624 0%, #002a38 100%);
-      color: #aeeaff;
-      height: 100%;
-      border-radius: 18px;
+      gap: 1rem;
+      padding: 20px;
     }
 
     .thanks h1 {
       font-size: 3em;
       color: #5dd0ff;
-      text-shadow: 0 0 20px rgba(93,208,255,0.7);
+      text-shadow: 0 0 25px rgba(93,208,255,0.8);
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(93,208,255,0.6), 0 0 20px rgba(93,208,255,0.4); }
+      to { text-shadow: 0 0 30px rgba(93,208,255,1), 0 0 60px rgba(93,208,255,0.7); }
+    }
+
+    .thanks p {
+      font-size: 1.3em;
+      color: #aeeaff;
+    }
+
+    .thanks small {
+      font-size: 1em;
+      color: #7dd4ff;
     }
 
   </style>
@@ -181,12 +253,10 @@
 
       <!-- 🌋 CAPA -->
       <section class="cover">
-        <!-- Ondas sísmicas -->
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
 
-        <!-- Conteúdo -->
         <div class="cover-content">
           <h1>Dinâmica Sísmica Global (2001–2023)</h1>
           <h3>Uma Abordagem de Visualização de Dados</h3>
@@ -208,7 +278,7 @@
         <p>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global.</p>
       </section>
 
-      <!-- Gráficos (mantidos como estavam) -->
+      <!-- Gráficos -->
       <section class="slide-full"><iframe src="charts/grafico1A.html"></iframe></section>
       <section class="slide-full"><iframe src="charts/grafico1B.html"></iframe></section>
       <section class="slide-full"><iframe src="charts/grafico2.html"></iframe></section>
@@ -227,11 +297,17 @@
         <p>A sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
       </section>
 
-      <!-- Agradecimento -->
+      <!-- 🙏 Agradecimento -->
       <section class="thanks">
-        <h1>Obrigado! 🙏</h1>
-        <p>MS906 – Visualização de Dados</p>
-        <p><small>IMECC · UNICAMP · 2025</small></p>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+        <div class="thanks-content">
+          <h1>Obrigado! 🙏</h1>
+          <p>MS906 – Visualização de Dados</p>
+          <p><small>IMECC · UNICAMP · 2025</small></p>
+        </div>
       </section>
 
     </div>
@@ -255,4 +331,3 @@
   </script>
 </body>
 </html>
-
