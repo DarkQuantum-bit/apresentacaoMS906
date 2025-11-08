@@ -30,22 +30,22 @@
       text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
-    /* 🌋 CAPA */
+    /* Capa estilizada com efeitos */
     .cover {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100vh;
-      width: 100%;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+      height: 100vh !important;
+      width: 100% !important;
       background: radial-gradient(circle at center, #00111c 0%, #002f46 100%);
       overflow: hidden;
       color: #e6eef7;
     }
 
-    /* Fundo da Terra */
+    /* Fundo com imagem da Terra */
     .cover::before {
       content: "";
       position: absolute;
@@ -56,7 +56,7 @@
       filter: blur(2px) brightness(0.7);
     }
 
-    /* Ondas sísmicas */
+    /* Animação sísmica */
     .wave {
       position: absolute;
       width: 300px;
@@ -136,7 +136,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Slides de gráfico */
+    /* Outros slides */
     .slide-full iframe {
       width: 100%;
       height: 100%;
@@ -155,63 +155,21 @@
       background: #000;
     }
 
-    /* ✨ Slide de agradecimento animado */
     .thanks {
-      position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      height: 100vh;
-      background: radial-gradient(circle at bottom, #001624 0%, #001019 80%);
-      overflow: hidden;
+      justify-content: center;
+      background: linear-gradient(180deg, #001624 0%, #002a38 100%);
       color: #aeeaff;
+      height: 100%;
+      border-radius: 18px;
     }
 
     .thanks h1 {
       font-size: 3em;
       color: #5dd0ff;
       text-shadow: 0 0 20px rgba(93,208,255,0.7);
-      animation: tremor 4s infinite ease-in-out;
-      z-index: 1;
-    }
-
-    .thanks p {
-      font-size: 1.2em;
-      margin-top: 1em;
-      z-index: 1;
-    }
-
-    /* 🌟 Partículas flutuantes */
-    .particle {
-      position: absolute;
-      background: #5dd0ff;
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: float 6s linear infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(0.3);
-        opacity: 0.4;
-      }
-      50% {
-        opacity: 0.9;
-      }
-      100% {
-        transform: translateY(-10vh) scale(0.8);
-        opacity: 0;
-      }
-    }
-
-    /* Ondas de energia no agradecimento */
-    .thanks .wave {
-      width: 250px;
-      height: 250px;
-      border-color: #00bcd4;
-      opacity: 0.3;
     }
 
   </style>
@@ -223,10 +181,12 @@
 
       <!-- 🌋 CAPA -->
       <section class="cover">
+        <!-- Ondas sísmicas -->
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
 
+        <!-- Conteúdo -->
         <div class="cover-content">
           <h1>🌍 Dinâmica Sísmica Global (2001–2023)</h1>
           <h3>Uma Abordagem de Visualização de Dados</h3>
@@ -248,7 +208,7 @@
         <p>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global.</p>
       </section>
 
-      <!-- Gráficos -->
+      <!-- Gráficos (mantidos como estavam) -->
       <section class="slide-full"><iframe src="charts/grafico1A.html"></iframe></section>
       <section class="slide-full"><iframe src="charts/grafico1B.html"></iframe></section>
       <section class="slide-full"><iframe src="charts/grafico2.html"></iframe></section>
@@ -267,14 +227,8 @@
         <p>A sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
       </section>
 
-      <!-- ✨ Agradecimento animado -->
+      <!-- Agradecimento -->
       <section class="thanks">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-
-        <div class="particles"></div>
-
         <h1>Obrigado! 🙏</h1>
         <p>MS906 – Visualização de Dados</p>
         <p><small>IMECC · UNICAMP · 2025</small></p>
@@ -297,21 +251,6 @@
       height: "100%",
       minScale: 0.2,
       maxScale: 1.1
-    });
-
-    // Criação dinâmica das partículas no slide de agradecimento
-    document.addEventListener("DOMContentLoaded", () => {
-      const thanks = document.querySelector(".thanks");
-      for (let i = 0; i < 25; i++) {
-        const p = document.createElement("div");
-        p.classList.add("particle");
-        const size = Math.random() * 4 + 2;
-        p.style.width = `${size}px`;
-        p.style.height = `${size}px`;
-        p.style.left = `${Math.random() * 100}%`;
-        p.style.animationDelay = `${Math.random() * 6}s`;
-        thanks.appendChild(p);
-      }
     });
   </script>
 </body>
