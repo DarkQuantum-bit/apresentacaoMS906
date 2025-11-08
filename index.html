@@ -15,7 +15,7 @@
       height: 100%;
       margin: 0;
       overflow: hidden;
-      background: radial-gradient(circle at center, #091018 0%, #000000 100%);
+      background: radial-gradient(circle at center, #0a0f18 0%, #000000 100%);
       color: #e6eef7;
       font-family: "Inter", sans-serif;
     }
@@ -30,45 +30,95 @@
       text-shadow: 0 0 15px rgba(93,208,255,0.5);
     }
 
-    /* 🔹 iframes ocupam 100% do slide visível */
-    .slide-full {
-      padding: 0 !important;
-      margin: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      background: #000;
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .slide-full iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      margin: 0;
-      display: block;
-      background: #000;
-    }
-
-    /* 🔹 Capa centralizada vertical e horizontalmente */
+    /* Capa estilizada com efeitos */
     .cover {
+      position: relative;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: center !important; /* Centraliza verticalmente */
-      align-items: center !important;     /* Centraliza horizontalmente */
+      justify-content: center !important;
+      align-items: center !important;
       text-align: center !important;
-      height: 100vh !important;           /* Ocupa 100% da altura da viewport */
+      height: 100vh !important;
       width: 100% !important;
-      background: linear-gradient(150deg, #00111c 0%, #002f46 100%);
-      border-radius: 18px;
-      box-sizing: border-box;
-      padding: 40px;
-      margin: 0 !important;
+      background: radial-gradient(circle at center, #00111c 0%, #002f46 100%);
+      overflow: hidden;
+      color: #e6eef7;
+    }
+
+    /* Fundo com imagem da Terra */
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg") center/cover no-repeat;
+      opacity: 0.15;
+      z-index: 0;
+      filter: blur(2px) brightness(0.7);
+    }
+
+    /* Animação sísmica */
+    .wave {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #5dd0ff;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: pulse 3s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .wave:nth-child(2) {
+      animation-delay: 0.5s;
+      border-color: #7de3ff;
+    }
+
+    .wave:nth-child(3) {
+      animation-delay: 1s;
+      border-color: #46bfff;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.5); opacity: 0.6; }
+      70% { transform: scale(2.5); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Conteúdo da capa */
+    .cover-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 20px;
+    }
+
+    .cover h1 {
+      font-size: 3em;
+      color: #5dd0ff;
+      text-shadow: 0 0 25px rgba(93,208,255,0.8);
+      animation: tremor 3s infinite ease-in-out;
+    }
+
+    @keyframes tremor {
+      0%, 100% { transform: translate(0, 0); }
+      20% { transform: translate(-1px, 2px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-2px, 1px); }
+      80% { transform: translate(1px, -2px); }
+    }
+
+    .cover h3 {
+      font-size: 1.5em;
+      color: #aeeaff;
+      margin-bottom: 0.8em;
     }
 
     .authors {
-      margin-top: 2em;
       font-size: 1.1em;
       line-height: 1.5em;
       color: #aeeaff;
@@ -80,40 +130,31 @@
     }
 
     .institution {
-      margin-top: 1.8em;
-      font-size: 0.95em;
+      margin-top: 1.5em;
+      font-size: 1em;
       color: #7dd4ff;
+      letter-spacing: 0.5px;
     }
 
-    /* Fragmentos animados */
-    [data-fragment] {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: all 0.7s ease;
+    /* Outros slides */
+    .slide-full iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
     }
 
-    .visible [data-fragment] {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Layout padrão */
-    .reveal section {
-      padding: 30px;
-      box-sizing: border-box;
+    .slide-full {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      background: #000;
     }
 
-    ul, ol {
-      text-align: left;
-      margin: 0 auto;
-      max-width: 900px;
-    }
-
-    /* Slide final */
     .thanks {
       display: flex;
       flex-direction: column;
@@ -131,10 +172,6 @@
       text-shadow: 0 0 20px rgba(93,208,255,0.7);
     }
 
-    .thanks p {
-      font-size: 1.2em;
-      margin-top: 1em;
-    }
   </style>
 </head>
 
@@ -142,83 +179,56 @@
   <div class="reveal">
     <div class="slides">
 
-      <!-- Capa centralizada -->
+      <!-- 🌋 CAPA -->
       <section class="cover">
-        <h1>🌍 Dinâmica Sísmica Global (2001–2023)</h1>
-        <h3>Uma Abordagem de Visualização de Dados</h3>
-        <div class="authors">
-          <span><strong>Participantes:</strong></span>
-          <span>Carlos Ribeiro – 232791</span>
-          <span>Enrico de Mira – 196437</span>
-          <span>Evzen Calle – 168531</span>
-          <span>Lucas Truzzi – 251324</span>
+        <!-- Ondas sísmicas -->
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+        <!-- Conteúdo -->
+        <div class="cover-content">
+          <h1>🌍 Dinâmica Sísmica Global (2001–2023)</h1>
+          <h3>Uma Abordagem de Visualização de Dados</h3>
+          <div class="authors">
+            <span><strong>Participantes:</strong></span>
+            <span>Carlos Ribeiro – 232791</span>
+            <span>Enrico de Mira – 196437</span>
+            <span>Evzen Calle – 168531</span>
+            <span>Lucas Truzzi – 251324</span>
+          </div>
+          <div class="institution">IMECC – UNICAMP · MS906 – Visualização de Dados</div>
         </div>
-        <div class="institution">IMECC – UNICAMP · MS906 – Visualização de Dados</div>
       </section>
 
       <!-- Introdução -->
-      <section data-transition="fade">
+      <section>
         <h2>Introdução</h2>
-        <p data-fragment>Os terremotos resultam da liberação súbita de energia acumulada na litosfera, gerando ondas sísmicas que se propagam pelo planeta.</p>
-        <p data-fragment>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global, com foco em eventos de magnitude ≥ 5.0.</p>
+        <p>Os terremotos resultam da liberação súbita de energia acumulada na litosfera, gerando ondas sísmicas que se propagam pelo planeta.</p>
+        <p>Este estudo analisa dados do USGS (2001–2023), explorando padrões espaciais e temporais da sismicidade global.</p>
       </section>
 
-      <!-- Descrição dos Dados -->
-      <section data-transition="convex">
-        <h2>Descrição dos Dados</h2>
-        <p data-fragment>O conjunto de dados é proveniente do <em>Comprehensive Earthquake Catalog (ComCat)</em> do USGS, contendo mais de 3 milhões de registros (2001–2023).</p>
-        <ul>
-          <li data-fragment>Variáveis: data, hora, latitude, longitude, magnitude, profundidade, tsunami.</li>
-          <li data-fragment>Fontes: USGS e repositório Kaggle “Ultimate Earthquake Dataset (1990–2023)”.</li>
-          <li data-fragment>Critério: magnitude ≥ 2.0 e recorte temporal de 2001 a 2023.</li>
-        </ul>
-      </section>
-
-      <!-- Análise Exploratória -->
-      <section data-transition="slide">
-        <h2>Análise Exploratória</h2>
-        <ul>
-          <li data-fragment>Distribuição espacial (continentes e placas tectônicas)</li>
-          <li data-fragment>Magnitude e profundidade dos eventos</li>
-          <li data-fragment>Ocorrência de tsunamis e eventos extremos</li>
-          <li data-fragment>Variações temporais e mensais</li>
-        </ul>
-      </section>
-
-      <!-- Gráficos -->
-      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico1A.html"></iframe></section>
-      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico1B.html"></iframe></section>
-      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico2.html"></iframe></section>
-      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico3A.html"></iframe></section>
-      <section class="slide-full" data-transition="concave"><iframe src="charts/grafico3B.html"></iframe></section>
-      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico4.html"></iframe></section>
-      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico5.html"></iframe></section>
-      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico6.html"></iframe></section>
-      <section class="slide-full" data-transition="convex"><iframe src="charts/grafico7.html"></iframe></section>
-      <section class="slide-full" data-transition="fade"><iframe src="charts/grafico8.html"></iframe></section>
-      <section class="slide-full" data-transition="zoom"><iframe src="charts/grafico9.html"></iframe></section>
+      <!-- Gráficos (mantidos como estavam) -->
+      <section class="slide-full"><iframe src="charts/grafico1A.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico1B.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico2.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico3A.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico3B.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico4.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico5.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico6.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico7.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico8.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico9.html"></iframe></section>
 
       <!-- Conclusão -->
-      <section data-transition="slide">
+      <section>
         <h2>Conclusão</h2>
-        <p data-fragment>A sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
-        <p data-fragment>87,5% dos eventos têm profundidade inferior a 100 km; tsunamis estão associados a magnitudes ≥ 7.0.</p>
-        <p data-fragment>Os resultados reforçam a importância do monitoramento contínuo e do uso de dados abertos para mitigação de riscos geológicos.</p>
-      </section>
-
-      <!-- Softwares -->
-      <section data-transition="fade">
-        <h2>Softwares Utilizados</h2>
-        <ul>
-          <li data-fragment>Python (Google Colab)</li>
-          <li data-fragment>pandas, numpy, geopandas, shapely</li>
-          <li data-fragment>matplotlib e pyECharts (para visualizações interativas)</li>
-        </ul>
-        <p data-fragment>Essas ferramentas possibilitaram análises estatísticas e geoespaciais consistentes da atividade sísmica global.</p>
+        <p>A sismicidade global se concentra nas fronteiras das placas tectônicas, principalmente no Círculo de Fogo do Pacífico.</p>
       </section>
 
       <!-- Agradecimento -->
-      <section class="thanks" data-transition="fade">
+      <section class="thanks">
         <h1>Obrigado! 🙏</h1>
         <p>MS906 – Visualização de Dados</p>
         <p><small>IMECC · UNICAMP · 2025</small></p>
@@ -227,7 +237,7 @@
     </div>
   </div>
 
-  <!-- Scripts Reveal.js -->
+  <!-- Reveal.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
   <script>
     Reveal.initialize({
@@ -242,10 +252,6 @@
       minScale: 0.2,
       maxScale: 1.1
     });
-
-    Reveal.on('slidechanged', e => e.currentSlide.classList.add('visible'));
   </script>
 </body>
 </html>
-
-
