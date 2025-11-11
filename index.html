@@ -758,34 +758,14 @@
         <p><strong>Ferramentas:</strong> Python (pandas, geopandas, matplotlib, pyEcharts) para processamento, análise e geovisualização dos dados</p>
       </section>
 
-      <!-- QUESTÃO 1 -->
+      <!-- QUESTÃO 4 -->
       <section class="question-slide">
         <div class="question-number">QUESTÃO 1</div>
-        <h2>Quais os continentes mais afetados por abalos sísmicos de alta intensidade (M ≥ 5.0) no período considerado?</h2>
+        <h2>Como se distribuem as magnitudes dos sismos registrados?</h2>
       </section>
-
-      <section class="slide-full"><iframe src="charts/grafico1B.html"></iframe></section>
-
-      <!-- Análise Questão 1 -->
-      <section class="content-slide section-data">
-        <h2><span class="icon-seismic">📊</span> Continentes Mais Afetados</h2>
-        <div class="highlight-box">
-          <p>A <strong>Ásia</strong> se destaca como o continente mais consistentemente afetado, com o maior número de sismos M ≥ 5.0 na maioria dos anos analisados.</p>
-        </div>
-        <p><strong>2008</strong> apresenta o pico máximo com <strong>237 eventos</strong> na Ásia, seguido por 2011 (191), 2012 (182) e 2004 (177).</p>
-        <p><strong>América do Sul e Oceania</strong> também exibem números significativos, enquanto <strong>Antártica e África</strong> registram os menores índices.</p>
-        <p>Anomalia notável: em <strong>2010</strong>, a América do Sul registrou 216 sismos, superando a Ásia (131).</p>
-      </section>
-
-      <!-- QUESTÃO 2 -->
-      <section class="question-slide">
-        <div class="question-number">QUESTÃO 2</div>
-        <h2>Como se distribuem as magnitudes dos terremotos registrados no conjunto de dados?</h2>
-      </section>
-
       <section class="slide-full"><iframe src="charts/grafico4.html"></iframe></section>
-
-      <!-- Análise Questão 2 -->
+      
+      <!-- Análise Questão 4 -->
       <section class="content-slide section-data">
         <h2><span class="icon-seismic">📈</span> Distribuição de Magnitudes</h2>
         <p>A distribuição apresenta um padrão <strong>bimodal</strong>, reflexo da metodologia de compilação e capacidade de detecção da rede sismográfica global:</p>
@@ -799,8 +779,8 @@
 
       <!-- QUESTÃO 3 -->
       <section class="question-slide">
-        <div class="question-number">QUESTÃO 3</div>
-        <h2>Qual a distribuição da profundidade do hipocentro dos sismos?</h2>
+        <div class="question-number">QUESTÃO 2</div>
+        <h2>Qual a distribuição da profundidade do hipocentro dos sismos detectados?</h2>
       </section>
 
       <section class="slide-full"><iframe src="charts/grafico3A.html"></iframe></section>
@@ -812,13 +792,12 @@
         <div class="highlight-box">
           <p><strong>87,5%</strong> dos eventos detectados ocorrem em profundidades <strong>&lt; 100 km</strong> (sismos rasos)</p>
         </div>
-          <p>Isso ocorre devido ao viés presente no conjunto de dados.</p>
       </section>
 
       <!-- QUESTÃO 4 -->
       <section class="question-slide">
-        <div class="question-number">QUESTÃO 4</div>
-        <h2>Qual a relação entre a magnitude dos sismos e a profundidade do hipocentro?</h2>
+        <div class="question-number">QUESTÃO 3</div>
+        <h2>Existe relação entre a magnitude dos sismos e a profundidade do hipocentro?</h2>
       </section>
 
       <section class="slide-full"><iframe src="charts/grafico3B.html"></iframe></section>
@@ -826,18 +805,97 @@
       <!-- Análise Questão 4 -->
       <section class="content-slide section-data">
         <h2><span class="icon-seismic">🔗</span> Magnitude vs. Profundidade</h2>
-        <p>A análise revela que a <strong>maior concentração</strong> de sismos ocorre em regiões rasas (até ~100 km), independentemente da magnitude.</p>
+        
         <div class="highlight-box">
-          <p>Eventos de <strong>grande magnitude (M ≥ 7)</strong> tendem a ocorrer predominantemente em profundidades intermediárias e profundas, associadas a zonas de subdução.</p>
+          <p>A relação entre magnitude e profundidade não é absoluta, sendo influenciada por <strong>fatores geotectônicos locais</strong> e tipo de fronteira de placa.</p>
         </div>
-        <p>Três eventos extremos de <strong>M > 8</strong> foram registrados em profundidades relativamente rasas (&lt; 50 km), indicando que megaterremotos também podem ocorrer em níveis superficiais da crosta.</p>
-        <p>A relação entre magnitude e profundidade não é absoluta, sendo influenciada por <strong>fatores geotectônicos locais</strong> e tipo de fronteira de placa.</p>
+      </section>
+
+      <!-- QUESTÃO 7 -->
+      <section class="question-slide">
+        <div class="question-number">QUESTÃO 4</div>
+        <h2>Quais placas tectônicas registraram mais eventos de alta intensidade (M ≥ 5.0)?</h2>
+      </section>
+
+      <section class="slide-full"><iframe src="charts/grafico5.html"></iframe></section>
+
+      <!-- Análise Questão 7 -->
+      <section class="content-slide section-data">
+        <h2><span class="icon-seismic">🧩</span> Atividade por Placa Tectônica</h2>
+        <p>O mapeamento revela <strong>concentração expressiva</strong> ao longo do Cinturão de Fogo do Pacífico:</p>
+        <div class="highlight-box">
+          <p>Placas <strong>Sunda (3.629)</strong>, <strong>Kermadec (3.687)</strong> e <strong>Pacífica (3.227)</strong> configuram as áreas de maior sismicidade global.</p>
+        </div>
+        <p>Essas regiões são caracterizadas por <strong>zonas de subdução convergentes</strong>, com elevada taxa de deformação litosférica e presença de fossas oceânicas profundas.</p>
+        <p>Placas menores ou intraplaca como <strong>Caroline (27)</strong>, <strong>Balmoral Reef (36)</strong> e <strong>Futuna (35)</strong> apresentam baixíssima atividade sísmica.</p>
+        <p>A distribuição espacial evidencia <strong>correlação direta</strong> entre regime tectônico e frequência de eventos sísmicos.</p>
+      </section>      
+
+      <!-- QUESTÃO 10 -->
+      <section class="question-slide">
+        <div class="question-number">QUESTÃO 5</div>
+        <h2>Como se distribuem os sismos no planeta?</h2>
+      </section>
+
+      <section class="slide-full"><iframe src="charts/grafico8.html"></iframe></section>
+
+      <!-- Análise Questão 10 -->
+      <section class="content-slide section-data">
+        <h2><span class="icon-seismic">🌐</span> Distribuição Global de Sismos</h2>
+        <p>A representação espacial evidencia <strong>correlação clara</strong> entre ocorrência de sismos e limites das placas tectônicas:</p>
+        <div class="highlight-box">
+          <p>Maioria dos sismos se concentra nas <strong>zonas de contato</strong> entre placas litosféricas, especialmente no Círculo de Fogo do Pacífico.</p>
+        </div>
+        <p><strong>Três grandes cinturões sísmicos globais:</strong></p>
+        <ul>
+          <li><strong>Círculo de Fogo do Pacífico:</strong> responsável pela maior parte da energia sísmica liberada</li>
+          <li><strong>Cinturão Alpino-Himalaico:</strong> resultado da colisão entre placas Eurasiática e Indo-Australiana</li>
+          <li><strong>Dorsais Meso-oceânicas:</strong> sismos rasos associados à expansão oceânica</li>
+        </ul>
+      </section>
+
+      <!-- QUESTÃO 8 -->
+      <section class="question-slide">
+        <div class="question-number">QUESTÃO 6</div>
+        <h2>Em qual período foram detectados mais simos de alta intensidade (M ≥ 5.0)?</h2>
+      </section>
+
+      <section class="slide-full"><iframe src="charts/grafico6.html"></iframe></section>
+
+      <!-- Análise Questão 8 -->
+      <section class="content-slide section-data">
+        <h2><span class="icon-seismic">📅</span> Distribuição Temporal</h2>
+        <p>O mapa de calor temporal revela <strong>comportamento heterogêneo</strong> ao longo da série temporal:</p>
+        <div class="highlight-box">
+          <p><strong>Março de 2011:</strong> Pico máximo com <strong>696 terremotos</strong>, associado à sequência de abalos do grande terremoto e tsunami no Japão.</p>
+        </div>
+        <p>Não há padrão sazonal claro, indicando que a atividade sísmica é <strong>independente de ciclos anuais</strong>.</p>
+      </section>
+
+      <!-- QUESTÃO 9 -->
+      <section class="question-slide">
+        <div class="question-number">QUESTÃO 7</div>
+        <h2> Como se distribuem os tsunamis no planeta?</h2>
+      </section>
+
+      <section class="slide-full"><iframe src="charts/grafico7.html"></iframe></section>
+
+      <!-- Análise Questão 9 -->
+      <section class="content-slide section-data">
+        <h2><span class="icon-seismic">🌊</span> Distribuição Global de Tsunamis</h2>
+        <p><strong>Clara concentração</strong> ao longo do Círculo de Fogo do Pacífico, zona de intensa atividade tectônica:</p>
+        <div class="highlight-box">
+          <p>Áreas de maior densidade: <strong>costa do Japão e Filipinas</strong>, arco das Ilhas Salomão, Indonésia, Nova Guiné e cinturões costeiros do Chile e México.</p>
+        </div>
+        <p>Esses segmentos coincidem com <strong>zonas de subdução ativas</strong> onde o deslocamento vertical do assoalho oceânico gera tsunamis.</p>
+        <p><strong>Oceanos Atlântico e Índico</strong> exibem baixa densidade de registros. No Índico, destaca-se o tsunami de 2004 relacionado à subdução da placa Indo-Australiana.</p>
+        <p>A distribuição confirma que tsunamis estão intrinsecamente ligados a <strong>margens convergentes</strong> com capacidade de grandes deslocamentos verticais.</p>
       </section>
 
       <!-- QUESTÃO 5 -->
       <section class="question-slide">
-        <div class="question-number">QUESTÃO 5</div>
-        <h2>Qual a distribuição da quantidade de maremotos por intensidade que geraram tsunamis?</h2>
+        <div class="question-number">QUESTÃO 8</div>
+        <h2>Maremotos com maior magnitude ocasionam mais tsunamis?</h2>
       </section>
 
       <section class="slide-full"><iframe src="charts/grafico2.html"></iframe></section>
@@ -854,10 +912,30 @@
         <p>Para eventos <strong>M ≥ 8.0</strong>, a proporção atinge seu pico, concentrando eventos de maior potencial destrutivo com capacidade de causar tsunamis transoceânicos.</p>
       </section>
 
+      <!-- QUESTÃO 1 -->
+      <section class="question-slide">
+        <div class="question-number">QUESTÃO 9</div>
+        <h2>Quais continentes são mais afetados por abalos sísmicos de alta intensidade (M ≥ 5.0)?</h2>
+      </section>
+
+      <section class="slide-full"><iframe src="charts/grafico1A.html"></iframe></section>
+      <section class="slide-full"><iframe src="charts/grafico1B.html"></iframe></section>
+
+      <!-- Análise Questão 1 -->
+      <section class="content-slide section-data">
+        <h2><span class="icon-seismic">📊</span> Continentes Mais Afetados</h2>
+        <div class="highlight-box">
+          <p>A <strong>Ásia</strong> se destaca como o continente mais consistentemente afetado, com o maior número de sismos M ≥ 5.0 na maioria dos anos analisados.</p>
+        </div>
+        <p><strong>2008</strong> apresenta o pico máximo com <strong>237 eventos</strong> na Ásia, seguido por 2011 (191), 2012 (182) e 2004 (177).</p>
+        <p><strong>América do Sul e Oceania</strong> também exibem números significativos, enquanto <strong>Antártica e África</strong> registram os menores índices.</p>
+        <p>Anomalia notável: em <strong>2010</strong>, a América do Sul registrou 216 sismos, superando a Ásia (131).</p>
+      </section>
+
       <!-- QUESTÃO 6 -->
       <section class="question-slide">
-        <div class="question-number">QUESTÃO 6</div>
-        <h2>Quais são os países mais afetados por abalos sísmicos de alta intensidade no período considerado?</h2>
+        <div class="question-number">QUESTÃO 10</div>
+        <h2>Quais são os países mais afetados por abalos sísmicos de alta intensidade (M ≥ 5.0)?</h2>
       </section>
 
       <section class="slide-full"><iframe src="charts/grafico9.html"></iframe></section>
@@ -884,89 +962,6 @@
         <p>Esta distribuição confirma a correlação direta entre localização geográfica, fronteiras de placas tectônicas e intensidade sísmica.</p>
       </section>
 
-      <!-- QUESTÃO 7 -->
-      <section class="question-slide">
-        <div class="question-number">QUESTÃO 7</div>
-        <h2>Quantos eventos ocorreram em cada placa tectônica no período utilizado?</h2>
-      </section>
-
-      <section class="slide-full"><iframe src="charts/grafico5.html"></iframe></section>
-
-      <!-- Análise Questão 7 -->
-      <section class="content-slide section-data">
-        <h2><span class="icon-seismic">🧩</span> Atividade por Placa Tectônica</h2>
-        <p>O mapeamento revela <strong>concentração expressiva</strong> ao longo do Cinturão de Fogo do Pacífico:</p>
-        <div class="highlight-box">
-          <p>Placas <strong>Sunda (3.629)</strong>, <strong>Kermadec (3.687)</strong> e <strong>Pacífica (3.227)</strong> configuram as áreas de maior sismicidade global.</p>
-        </div>
-        <p>Essas regiões são caracterizadas por <strong>zonas de subdução convergentes</strong>, com elevada taxa de deformação litosférica e presença de fossas oceânicas profundas.</p>
-        <p>Placas menores ou intraplaca como <strong>Caroline (27)</strong>, <strong>Balmoral Reef (36)</strong> e <strong>Futuna (35)</strong> apresentam baixíssima atividade sísmica.</p>
-        <p>A distribuição espacial evidencia <strong>correlação direta</strong> entre regime tectônico e frequência de eventos sísmicos.</p>
-      </section>
-
-      <!-- QUESTÃO 8 -->
-      <section class="question-slide">
-        <div class="question-number">QUESTÃO 8</div>
-        <h2>Qual seria a distribuição mensal do número absoluto de ocorrências de abalos sísmicos ao redor do mundo no período considerado?</h2>
-      </section>
-
-      <section class="slide-full"><iframe src="charts/grafico6.html"></iframe></section>
-
-      <!-- Análise Questão 8 -->
-      <section class="content-slide section-data">
-        <h2><span class="icon-seismic">📅</span> Distribuição Temporal</h2>
-        <p>O mapa de calor temporal revela <strong>comportamento heterogêneo</strong> ao longo da série temporal:</p>
-        <div class="highlight-box">
-          <p><strong>Março de 2011:</strong> Pico máximo com <strong>696 terremotos</strong>, associado à sequência de abalos do grande terremoto e tsunami no Japão.</p>
-        </div>
-        <p>A visualização permite identificar <strong>anomalias sísmicas de curta duração</strong> e períodos de baixa atividade.</p>
-        <p>Regiões com coloração mais clara indicam meses de relativa estabilidade tectônica ou possíveis lacunas de registro.</p>
-        <p>Não há padrão sazonal claro, indicando que a atividade sísmica é <strong>independente de ciclos anuais</strong>.</p>
-      </section>
-
-      <!-- QUESTÃO 9 -->
-      <section class="question-slide">
-        <div class="question-number">QUESTÃO 9</div>
-        <h2>De acordo com a base de dados, onde os tsunamis ocorrem com maior frequência?</h2>
-      </section>
-
-      <section class="slide-full"><iframe src="charts/grafico7.html"></iframe></section>
-
-      <!-- Análise Questão 9 -->
-      <section class="content-slide section-data">
-        <h2><span class="icon-seismic">🌊</span> Distribuição Global de Tsunamis</h2>
-        <p><strong>Clara concentração</strong> ao longo do Círculo de Fogo do Pacífico, zona de intensa atividade tectônica:</p>
-        <div class="highlight-box">
-          <p>Áreas de maior densidade: <strong>costa do Japão e Filipinas</strong>, arco das Ilhas Salomão, Indonésia, Nova Guiné e cinturões costeiros do Chile e México.</p>
-        </div>
-        <p>Esses segmentos coincidem com <strong>zonas de subdução ativas</strong> onde o deslocamento vertical do assoalho oceânico gera tsunamis.</p>
-        <p><strong>Oceanos Atlântico e Índico</strong> exibem baixa densidade de registros. No Índico, destaca-se o tsunami de 2004 relacionado à subdução da placa Indo-Australiana.</p>
-        <p>A distribuição confirma que tsunamis estão intrinsecamente ligados a <strong>margens convergentes</strong> com capacidade de grandes deslocamentos verticais.</p>
-      </section>
-
-      <!-- QUESTÃO 10 -->
-      <section class="question-slide">
-        <div class="question-number">QUESTÃO 10</div>
-        <h2>Como se distribuem os sismos no mundo?</h2>
-      </section>
-
-      <section class="slide-full"><iframe src="charts/grafico8.html"></iframe></section>
-
-      <!-- Análise Questão 10 -->
-      <section class="content-slide section-data">
-        <h2><span class="icon-seismic">🌐</span> Distribuição Global de Sismos</h2>
-        <p>A representação espacial evidencia <strong>correlação clara</strong> entre ocorrência de sismos e limites das placas tectônicas:</p>
-        <div class="highlight-box">
-          <p>Maioria dos sismos se concentra nas <strong>zonas de contato</strong> entre placas litosféricas, especialmente no Círculo de Fogo do Pacífico.</p>
-        </div>
-        <p><strong>Três grandes cinturões sísmicos globais:</strong></p>
-        <ul>
-          <li><strong>Círculo de Fogo do Pacífico:</strong> responsável pela maior parte da energia sísmica liberada</li>
-          <li><strong>Cinturão Alpino-Himalaico:</strong> resultado da colisão entre placas Eurasiática e Indo-Australiana</li>
-          <li><strong>Dorsais Meso-oceânicas:</strong> sismos rasos associados à expansão oceânica</li>
-        </ul>
-      </section>
-
       <!-- Principais Descobertas -->
       <section class="content-slide section-data">
         <h2><span class="icon-seismic">🔍</span> Principais Descobertas</h2>
@@ -974,7 +969,6 @@
           <p><strong>Círculo de Fogo do Pacífico:</strong> Região dominante com ~80% da energia sísmica global</p>
         </div>
         <ul>
-          <li><strong>87,5%</strong> dos eventos ocorrem em profundidades <em>&lt; 100 km</em></li>
           <li><strong>Ásia</strong> é o continente mais afetado consistentemente</li>
           <li>Tsunamis tornam-se significativos a partir de <strong>M ≥ 7.0</strong></li>
           <li><strong>Indonésia, Papua-Nova Guiné e Chile</strong> lideram em eventos absolutos</li>
@@ -1104,6 +1098,7 @@
   </script>
 </body>
 </html>
+
 
 
 
